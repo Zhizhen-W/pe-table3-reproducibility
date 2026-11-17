@@ -1,0 +1,9 @@
+{
+  "frequency_hz": 90,
+  "water_depth_m": 200,
+  "source_depth_m": 100,
+  "receiver_depth_m": 100,
+  "sound_speed_mps": 1500,
+  "coarse_modes": 144,
+  "fine_modes": 288
+}

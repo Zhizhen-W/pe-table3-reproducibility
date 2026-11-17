@@ -1,0 +1,76 @@
+{
+  "programs": [
+    {
+      "program": "RAM 1.5",
+      "method": "SSP",
+      "url": "https://oalib-acoustics.org/website_resources/PE/RAM/",
+      "source": "pe_programs/mainline/ram_family/oalib_ram",
+      "license_record": "No explicit license in archived snapshot",
+      "required_changes": [
+        "external starter/launch interface",
+        "optional water attenuation profile",
+        "configuration-specific array capacity"
+      ]
+    },
+    {
+      "program": "FOR3D Laurel",
+      "method": "LSS-FD",
+      "url": "https://oalib-acoustics.org/website_resources/PE/For3D_Laurel_version/",
+      "source": "pe_programs/mainline/for3d/For3D_Laurel_version",
+      "license_record": "No explicit license in archived snapshot",
+      "required_changes": [
+        "external starter reader",
+        "rigid-bottom boundary in C2/N1",
+        "C9 patched 3D source and capacity settings"
+      ]
+    },
+    {
+      "program": "SMPE",
+      "method": "CT-S",
+      "url": "https://github.com/tuhouwang/SMPE",
+      "commit": "625444e0da95073e6222f8de3342a0808d13d73a",
+      "license_record": "GPL-3.0-or-later in upstream source header",
+      "required_changes": [
+        "Octave compatibility shims",
+        "SMPE_extstarter.m and external-starter wrapper"
+      ]
+    },
+    {
+      "program": "UMPE 1.1",
+      "method": "SSF",
+      "url": "https://oalib-acoustics.org/website_resources/PE/UMPE/UMPE.zip",
+      "archive_sha256": "d83586e68366826810c3b7ae739a31bb8ac815e81ac72f429e964464219b8d3b",
+      "license_record": "Technical memorandum states unrestricted distribution; no standalone source LICENSE in archive",
+      "required_changes": [
+        "external starter interface",
+        "matching binary reader and physical-pressure conversion"
+      ]
+    },
+    {
+      "program": "AMPLE",
+      "method": "WAMPE",
+      "url": "https://github.com/GoldFeniks/AMPLE",
+      "commit": "a5c107ca5083f6183cd88f9fcdf7489106dd4622",
+      "license_record": "MIT; dependency licenses remain separate",
+      "required_changes": [
+        "archived release_density source modifications"
+      ],
+      "binary_sha256": "cb2b89235e5c9a375f2aade8075d7da57c183862204dd4582ad1010a9c8bc8c3"
+    },
+    {
+      "program": "SCOOTER/FIELDS",
+      "method": "reference",
+      "url": "https://oalib-acoustics.org/website_resources/AcousticsToolbox/",
+      "archive_sha256": "2dc234792e16ea06add0722a184d1fd9e5fdc971dba146b00bc166edb052ca94",
+      "source": "paper/experiments/matrix_completion_20261011/toolchain",
+      "license_record": "Consult exact Acoustics Toolbox archive terms",
+      "compiler_flags": "-O2 -std=legacy -fallow-argument-mismatch -I../misc"
+    },
+    {
+      "program": "COUPLE07",
+      "method": "reference",
+      "source": "case07_asa_wedge_range_dependent and paper/experiments/matrix_completion_20261011/n3_slope_seamount",
+      "license_record": "Consult the original distribution; native inputs and extracted outputs are packaged here"
+    }
+  ]
+}

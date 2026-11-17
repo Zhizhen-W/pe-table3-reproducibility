@@ -1,0 +1,28 @@
+{
+  "C1": {
+    "pressure": "exp(i*k*R)/(4*pi*R)",
+    "time_convention": "exp(-i*omega*t)",
+    "sound_speed_mps": 1500
+  },
+  "C2": {
+    "surface": "pressure_release",
+    "bottom": "rigid",
+    "mode_vertical_wavenumber": "(m-0.5)*pi/H, m=1..M",
+    "horizontal_propagation": "outgoing Hankel H0(1)",
+    "includes_evanescent_modes": true
+  },
+  "N1": {
+    "cutoff_angles_deg": [
+      20,
+      30,
+      40,
+      50,
+      60,
+      70
+    ],
+    "selection": "asin((m-0.5)*pi/(H*k0)) <= theta_cut",
+    "source_depth_m": 100,
+    "water_depth_m": 200,
+    "sound_speed_mps": 1500
+  }
+}

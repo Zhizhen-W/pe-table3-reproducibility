@@ -1,0 +1,102 @@
+{
+  "ppm": 2,
+  "ord_rich": 3,
+  "water_rho": 1.024,
+  "bottom_rhos": [
+    1.8
+  ],
+  "bottom_c1s": [
+    2500
+  ],
+  "bottom_c2s": [
+    2500
+  ],
+  "bottom_layers": [
+    500
+  ],
+  "betas": [
+    0,
+    0
+  ],
+  "complex_modes": false,
+  "const_modes": true,
+  "mode_subset": -1,
+  "n_modes": 0,
+  "max_mode": 43,
+  "x0": 0,
+  "x1": 500,
+  "nx": 1001,
+  "y0": -1000,
+  "y1": 1000,
+  "ny": 8001,
+  "z0": 50,
+  "z1": 100,
+  "nz": 2,
+  "mny": 2,
+  "z_s": 100,
+  "y_s": 0,
+  "init": "greene",
+  "coefficients": {
+    "type": "ssp",
+    "parameters": {
+      "n": 4
+    }
+  },
+  "boundary_conditions": {
+    "type": "pml",
+    "parameters": {
+      "width": 300,
+      "function": {
+        "type": "cubic",
+        "parameters": {
+          "scale": 5
+        }
+      }
+    }
+  },
+  "input_data": [
+    {
+      "type": "frequencies",
+      "dimensions": [
+        1
+      ],
+      "values": [
+        200
+      ]
+    },
+    {
+      "type": "bathymetry",
+      "dimensions": [
+        2,
+        2
+      ],
+      "values": [
+        [
+          200,
+          200
+        ],
+        [
+          200,
+          200
+        ]
+      ]
+    },
+    {
+      "type": "hydrology",
+      "dimensions": [
+        2,
+        2
+      ],
+      "values": [
+        [
+          1500,
+          1500
+        ],
+        [
+          1500,
+          1500
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1847 @@
+{
+  "schema_version": 1,
+  "scope": "Table III reference checks; scoring reference, common starter and convergence-check levels are separate roles.",
+  "packaging_validation": "File/array structure only. No numerical checks were rerun during packaging.",
+  "rows": [
+    {
+      "id": "C1_f030_reference",
+      "case": "C1",
+      "frequency_hz": 30,
+      "reference": "Analytical free-space Green function",
+      "expected_display": "Analytical",
+      "scoring_configuration": {
+        "expression": "exp(i k R)/(4 pi R)",
+        "c_mps": 1500,
+        "source_depth_m": 1000,
+        "receiver_depth_m": 1000
+      },
+      "check_pair": "No discretized reference ladder",
+      "evaluation": "Use exact Green function at each selected PE scoring point",
+      "datasets": [],
+      "input_files": [],
+      "notes": [],
+      "source_records": [],
+      "kind": "analytical",
+      "aggregation": "not_applicable"
+    },
+    {
+      "id": "C1_f090_reference",
+      "case": "C1",
+      "frequency_hz": 90,
+      "reference": "Analytical free-space Green function",
+      "expected_display": "Analytical",
+      "scoring_configuration": {
+        "expression": "exp(i k R)/(4 pi R)",
+        "c_mps": 1500,
+        "source_depth_m": 500,
+        "receiver_depth_m": 500
+      },
+      "check_pair": "No discretized reference ladder",
+      "evaluation": "Use exact Green function at each selected PE scoring point",
+      "datasets": [],
+      "input_files": [],
+      "notes": [],
+      "source_records": [],
+      "kind": "analytical",
+      "aggregation": "not_applicable"
+    },
+    {
+      "id": "C1_f200_reference",
+      "case": "C1",
+      "frequency_hz": 200,
+      "reference": "Analytical free-space Green function",
+      "expected_display": "Analytical",
+      "scoring_configuration": {
+        "expression": "exp(i k R)/(4 pi R)",
+        "c_mps": 1500,
+        "source_depth_m": 100,
+        "receiver_depth_m": 100
+      },
+      "check_pair": "No discretized reference ladder",
+      "evaluation": "Use exact Green function at each selected PE scoring point",
+      "datasets": [],
+      "input_files": [],
+      "notes": [],
+      "source_records": [],
+      "kind": "analytical",
+      "aggregation": "not_applicable"
+    },
+    {
+      "id": "C2_f030_reference",
+      "case": "C2",
+      "frequency_hz": 30,
+      "reference": "Exact rigid-bottom normal-mode expansion",
+      "expected_display": "0.00",
+      "scoring_configuration": {
+        "H_m": 200,
+        "c_mps": 1500,
+        "source_depth_m": 100,
+        "receiver_depth_m": 100,
+        "Q": 1,
+        "total_modes": 128,
+        "propagating_modes": 8,
+        "evanescent_modes": 120,
+        "selection": "max(80, N_propagating+120)",
+        "range_kernel": "Hankel H0^(1)"
+      },
+      "check_pair": "128 -> 256 modes",
+      "evaluation": "z=100 m; r=90:10:2000 m; 192 points",
+      "datasets": [
+        {
+          "path": "data/references/checks/C2_f030_reference.npz",
+          "format": "paired_complex_npz",
+          "layout": "pressure[depth,range]",
+          "n_points": 192,
+          "shape": [
+            1,
+            192
+          ],
+          "source_paths": [
+            "paper/experiments/c2_reference_truncation_20261107/results/adjacent_M128_M256.csv"
+          ],
+          "aggregation": "single_line"
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C2_f030_reference/modal_settings.json",
+          "source_path": "case01_point_source_rigid_bottom_waveguide/src/case01_point_source_rigid_bottom_waveguide/rigid_modes.py"
+        }
+      ],
+      "notes": [
+        "0.00 is zero numerical change on the checked samples, not a universal exactness/error-bound claim."
+      ],
+      "source_records": [
+        {
+          "coarse_modes": 128,
+          "fine_modes": 256,
+          "D_SPL_dB": 0.0,
+          "n_points": 192
+        }
+      ],
+      "kind": "archived_pair",
+      "aggregation": "single_line"
+    },
+    {
+      "id": "C2_f090_reference",
+      "case": "C2",
+      "frequency_hz": 90,
+      "reference": "Exact rigid-bottom normal-mode expansion",
+      "expected_display": "0.00",
+      "scoring_configuration": {
+        "H_m": 200,
+        "c_mps": 1500,
+        "source_depth_m": 100,
+        "receiver_depth_m": 100,
+        "Q": 1,
+        "total_modes": 144,
+        "propagating_modes": 24,
+        "evanescent_modes": 120,
+        "selection": "max(80, N_propagating+120)",
+        "range_kernel": "Hankel H0^(1)"
+      },
+      "check_pair": "144 -> 288 modes",
+      "evaluation": "z=100 m; r=54:4:498 m; 112 points",
+      "datasets": [
+        {
+          "path": "data/references/checks/C2_f090_reference.npz",
+          "format": "paired_complex_npz",
+          "layout": "pressure[depth,range]",
+          "n_points": 112,
+          "shape": [
+            1,
+            112
+          ],
+          "source_paths": [
+            "paper/experiments/matrix_completion_20261011/smpe_convergence/results/reference/case01_090hz.csv"
+          ],
+          "aggregation": "single_line"
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C2_f090_reference/modal_settings.json",
+          "source_path": "case01_point_source_rigid_bottom_waveguide/src/case01_point_source_rigid_bottom_waveguide/rigid_modes.py"
+        }
+      ],
+      "notes": [
+        "0.00 is zero numerical change on the checked samples, not a universal exactness/error-bound claim."
+      ],
+      "source_records": [
+        {
+          "coarse_modes": 144,
+          "fine_modes": 288,
+          "D_SPL_dB": 0.0,
+          "n_points": 112
+        }
+      ],
+      "kind": "archived_pair",
+      "aggregation": "single_line"
+    },
+    {
+      "id": "C2_f200_reference",
+      "case": "C2",
+      "frequency_hz": 200,
+      "reference": "Exact rigid-bottom normal-mode expansion",
+      "expected_display": "0.00",
+      "scoring_configuration": {
+        "H_m": 200,
+        "c_mps": 1500,
+        "source_depth_m": 100,
+        "receiver_depth_m": 100,
+        "Q": 1,
+        "total_modes": 173,
+        "propagating_modes": 53,
+        "evanescent_modes": 120,
+        "selection": "max(80, N_propagating+120)",
+        "range_kernel": "Hankel H0^(1)"
+      },
+      "check_pair": "173 -> 346 modes",
+      "evaluation": "z=100 m; r=56:2:500 m; 223 points",
+      "datasets": [
+        {
+          "path": "data/references/checks/C2_f200_reference.npz",
+          "format": "paired_complex_npz",
+          "layout": "pressure[depth,range]",
+          "n_points": 223,
+          "shape": [
+            1,
+            223
+          ],
+          "source_paths": [
+            "paper/experiments/matrix_completion_20261011/smpe_convergence/results/reference/case01_200hz.csv"
+          ],
+          "aggregation": "single_line"
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C2_f200_reference/modal_settings.json",
+          "source_path": "case01_point_source_rigid_bottom_waveguide/src/case01_point_source_rigid_bottom_waveguide/rigid_modes.py"
+        }
+      ],
+      "notes": [
+        "0.00 is zero numerical change on the checked samples, not a universal exactness/error-bound claim."
+      ],
+      "source_records": [
+        {
+          "coarse_modes": 173,
+          "fine_modes": 346,
+          "D_SPL_dB": 0.0,
+          "n_points": 223
+        }
+      ],
+      "kind": "archived_pair",
+      "aggregation": "single_line"
+    },
+    {
+      "id": "C3_f030_reference",
+      "case": "C3",
+      "frequency_hz": 30,
+      "reference": "DGM wavenumber integration",
+      "expected_display": "6.51e-05",
+      "scoring_configuration": {
+        "method": "stable_dgm_wavenumber_integration_trapezoid_shifted_contour",
+        "time_convention": "e^{-iwt}",
+        "source_normalisation": "free-field exp(ikR)/(4 pi R)",
+        "frequency_hz": 30.0,
+        "layer_tops_m": [
+          0.0,
+          200.0
+        ],
+        "c_mps": [
+          1500.0,
+          2500.0
+        ],
+        "rho_kg_m3": [
+          1024.0,
+          1800.0
+        ],
+        "source_depth_m": 100.0,
+        "settings": {
+          "range_window_m": 400000.0,
+          "contour_decay": 20.0,
+          "k_extra_rad_per_m": 0.8
+        },
+        "nk": 58930,
+        "dk_rad_per_m": 1.5707963267948964e-05,
+        "kmax_rad_per_m": 0.9256545674169645,
+        "contour_offset_gamma": 5e-05,
+        "quadrature": "Trapezoidal integration, exact J0, shifted contour k=j*dk-i*gamma, analytic direct field",
+        "coarse_settings": {
+          "range_window_m": 200000,
+          "contour_decay": 15,
+          "k_extra_rad_per_m": 0.4,
+          "dk_rad_per_m": 3.141592653589793e-05,
+          "gamma_per_m": 7.5e-05
+        },
+        "fine_gamma_per_m": 5e-05
+      },
+      "check_pair": "(L=200 km, decay=15, k_extra=0.4 rad/m) -> (L=400 km, decay=20, k_extra=0.8 rad/m)",
+      "evaluation": "z=50 m; r=50:5:2000 m; 391 points, including r0=50 m",
+      "datasets": [
+        {
+          "path": "data/references/checks/C3_f030_reference_archived_fine.npz",
+          "format": "fine_complex_npz",
+          "shape": [
+            1,
+            391
+          ],
+          "n_points": 391,
+          "source_paths": [
+            "case02_point_source_pekeris_waveguide/reference/dgm_ffp_paper_rules/case02_dgm_ffp_30hz_z50m_range.csv"
+          ]
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C3_f030_reference/dgm_settings.json",
+          "source_path": "case02_point_source_pekeris_waveguide/reference/dgm_ffp_paper_rules/dgm_ffp_manifest.json"
+        }
+      ],
+      "notes": [
+        "DGM reference check includes r0; PE error scoring excludes the injection point and uses method-dependent selected ranges.",
+        "Water layer extends to 200 m, lower fluid is an infinite half-space; physical_bottom_end_m=400 in environment metadata is not a DGM reflecting truncation.",
+        "Only the fine reference pressure was archived. The reader command recomputes both DGM levels from the original implementation; neither level was computed during repository packaging."
+      ],
+      "source_records": [
+        {
+          "frequency_hz": "30",
+          "profile": "z50m_range",
+          "n_points": "391",
+          "anchor_settings": "{\"range_window_m\": 400000.0, \"contour_decay\": 20.0, \"k_extra_rad_per_m\": 0.8}",
+          "check_settings": "{\"range_window_m\": 200000.0, \"contour_decay\": 15.0, \"k_extra_rad_per_m\": 0.4}",
+          "spl_rmse_change_db": "6.509061719248588e-05",
+          "complex_relative_l2_change": "2.641886216551696e-06",
+          "converged": "True"
+        }
+      ],
+      "kind": "dgm_regenerate_pair",
+      "aggregation": "single_line",
+      "implementation": "data/references/implementations/dgm_layered_ffp.py"
+    },
+    {
+      "id": "C3_f090_reference",
+      "case": "C3",
+      "frequency_hz": 90,
+      "reference": "DGM wavenumber integration",
+      "expected_display": "6.89e-06",
+      "scoring_configuration": {
+        "method": "stable_dgm_wavenumber_integration_trapezoid_shifted_contour",
+        "time_convention": "e^{-iwt}",
+        "source_normalisation": "free-field exp(ikR)/(4 pi R)",
+        "frequency_hz": 90.0,
+        "layer_tops_m": [
+          0.0,
+          200.0
+        ],
+        "c_mps": [
+          1500.0,
+          2500.0
+        ],
+        "rho_kg_m3": [
+          1024.0,
+          1800.0
+        ],
+        "source_depth_m": 100.0,
+        "settings": {
+          "range_window_m": 400000.0,
+          "contour_decay": 20.0,
+          "k_extra_rad_per_m": 0.8
+        },
+        "nk": 74930,
+        "dk_rad_per_m": 1.5707963267948964e-05,
+        "kmax_rad_per_m": 1.1769819797041479,
+        "contour_offset_gamma": 5e-05,
+        "quadrature": "Trapezoidal integration, exact J0, shifted contour k=j*dk-i*gamma, analytic direct field",
+        "coarse_settings": {
+          "range_window_m": 200000,
+          "contour_decay": 15,
+          "k_extra_rad_per_m": 0.4,
+          "dk_rad_per_m": 3.141592653589793e-05,
+          "gamma_per_m": 7.5e-05
+        },
+        "fine_gamma_per_m": 5e-05
+      },
+      "check_pair": "(L=200 km, decay=15, k_extra=0.4 rad/m) -> (L=400 km, decay=20, k_extra=0.8 rad/m)",
+      "evaluation": "z=50 m; r=50:2:500 m; 226 points, including r0=50 m",
+      "datasets": [
+        {
+          "path": "data/references/checks/C3_f090_reference_archived_fine.npz",
+          "format": "fine_complex_npz",
+          "shape": [
+            1,
+            226
+          ],
+          "n_points": 226,
+          "source_paths": [
+            "case02_point_source_pekeris_waveguide/reference/dgm_ffp_paper_rules/case02_dgm_ffp_90hz_z50m_range.csv"
+          ]
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C3_f090_reference/dgm_settings.json",
+          "source_path": "case02_point_source_pekeris_waveguide/reference/dgm_ffp_paper_rules/dgm_ffp_manifest.json"
+        }
+      ],
+      "notes": [
+        "DGM reference check includes r0; PE error scoring excludes the injection point and uses method-dependent selected ranges.",
+        "Water layer extends to 200 m, lower fluid is an infinite half-space; physical_bottom_end_m=400 in environment metadata is not a DGM reflecting truncation.",
+        "Only the fine reference pressure was archived. The reader command recomputes both DGM levels from the original implementation; neither level was computed during repository packaging."
+      ],
+      "source_records": [
+        {
+          "frequency_hz": "90",
+          "profile": "z50m_range",
+          "n_points": "226",
+          "anchor_settings": "{\"range_window_m\": 400000.0, \"contour_decay\": 20.0, \"k_extra_rad_per_m\": 0.8}",
+          "check_settings": "{\"range_window_m\": 200000.0, \"contour_decay\": 15.0, \"k_extra_rad_per_m\": 0.4}",
+          "spl_rmse_change_db": "6.892351668443379e-06",
+          "complex_relative_l2_change": "6.626370228483543e-07",
+          "converged": "True"
+        }
+      ],
+      "kind": "dgm_regenerate_pair",
+      "aggregation": "single_line",
+      "implementation": "data/references/implementations/dgm_layered_ffp.py"
+    },
+    {
+      "id": "C3_f200_reference",
+      "case": "C3",
+      "frequency_hz": 200,
+      "reference": "DGM wavenumber integration",
+      "expected_display": "6.90e-06",
+      "scoring_configuration": {
+        "method": "stable_dgm_wavenumber_integration_trapezoid_shifted_contour",
+        "time_convention": "e^{-iwt}",
+        "source_normalisation": "free-field exp(ikR)/(4 pi R)",
+        "frequency_hz": 200.0,
+        "layer_tops_m": [
+          0.0,
+          200.0
+        ],
+        "c_mps": [
+          1500.0,
+          2500.0
+        ],
+        "rho_kg_m3": [
+          1024.0,
+          1800.0
+        ],
+        "source_depth_m": 100.0,
+        "settings": {
+          "range_window_m": 400000.0,
+          "contour_decay": 20.0,
+          "k_extra_rad_per_m": 0.8
+        },
+        "nk": 104263,
+        "dk_rad_per_m": 1.5707963267948964e-05,
+        "kmax_rad_per_m": 1.6377436662428948,
+        "contour_offset_gamma": 5e-05,
+        "quadrature": "Trapezoidal integration, exact J0, shifted contour k=j*dk-i*gamma, analytic direct field",
+        "coarse_settings": {
+          "range_window_m": 200000,
+          "contour_decay": 15,
+          "k_extra_rad_per_m": 0.4,
+          "dk_rad_per_m": 3.141592653589793e-05,
+          "gamma_per_m": 7.5e-05
+        },
+        "fine_gamma_per_m": 5e-05
+      },
+      "check_pair": "(L=200 km, decay=15, k_extra=0.4 rad/m) -> (L=400 km, decay=20, k_extra=0.8 rad/m)",
+      "evaluation": "z=50 m; r=50:2:500 m; 226 points, including r0=50 m",
+      "datasets": [
+        {
+          "path": "data/references/checks/C3_f200_reference_archived_fine.npz",
+          "format": "fine_complex_npz",
+          "shape": [
+            1,
+            226
+          ],
+          "n_points": 226,
+          "source_paths": [
+            "case02_point_source_pekeris_waveguide/reference/dgm_ffp_paper_rules/case02_dgm_ffp_200hz_z50m_range.csv"
+          ]
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C3_f200_reference/dgm_settings.json",
+          "source_path": "case02_point_source_pekeris_waveguide/reference/dgm_ffp_paper_rules/dgm_ffp_manifest.json"
+        }
+      ],
+      "notes": [
+        "DGM reference check includes r0; PE error scoring excludes the injection point and uses method-dependent selected ranges.",
+        "Water layer extends to 200 m, lower fluid is an infinite half-space; physical_bottom_end_m=400 in environment metadata is not a DGM reflecting truncation.",
+        "Only the fine reference pressure was archived. The reader command recomputes both DGM levels from the original implementation; neither level was computed during repository packaging."
+      ],
+      "source_records": [
+        {
+          "frequency_hz": "200",
+          "profile": "z50m_range",
+          "n_points": "226",
+          "anchor_settings": "{\"range_window_m\": 400000.0, \"contour_decay\": 20.0, \"k_extra_rad_per_m\": 0.8}",
+          "check_settings": "{\"range_window_m\": 200000.0, \"contour_decay\": 15.0, \"k_extra_rad_per_m\": 0.4}",
+          "spl_rmse_change_db": "6.902181784352462e-06",
+          "complex_relative_l2_change": "6.239833951427877e-07",
+          "converged": "True"
+        }
+      ],
+      "kind": "dgm_regenerate_pair",
+      "aggregation": "single_line",
+      "implementation": "data/references/implementations/dgm_layered_ffp.py"
+    },
+    {
+      "id": "C4_f030_reference",
+      "case": "C4",
+      "frequency_hz": 30,
+      "reference": "DGM wavenumber integration",
+      "expected_display": "8.79e-05",
+      "scoring_configuration": {
+        "method": "stable_dgm_wavenumber_integration_trapezoid_shifted_contour",
+        "time_convention": "e^{-iwt}",
+        "source_normalisation": "free-field exp(ikR)/(4 pi R)",
+        "frequency_hz": 30.0,
+        "layer_tops_m": [
+          0.0,
+          200.0,
+          220.0,
+          260.0,
+          320.0
+        ],
+        "c_mps": [
+          1500.0,
+          1560.0,
+          1650.0,
+          1800.0,
+          2400.0
+        ],
+        "rho_kg_m3": [
+          1024.0,
+          1500.0,
+          1700.0,
+          1900.0,
+          2200.0
+        ],
+        "attenuation_db_per_wavelength": [
+          0.0,
+          0.2,
+          0.3,
+          0.5,
+          0.1
+        ],
+        "attenuation_conversion": "AT CRCI W conjugated: c*(1-i*a/(8.6858896*2*pi))",
+        "source_depth_m": 100.0,
+        "settings": {
+          "range_window_m": 400000,
+          "contour_decay": 20,
+          "k_extra_rad_per_m": 0.8
+        },
+        "nk": 58930,
+        "dk_rad_per_m": 1.5707963267948964e-05,
+        "kmax_rad_per_m": 0.9256545674169645,
+        "contour_offset_gamma": 5e-05,
+        "quadrature": "Trapezoidal integration, exact J0, shifted contour k=j*dk-i*gamma, analytic direct field",
+        "coarse_settings": {
+          "range_window_m": 200000,
+          "contour_decay": 15,
+          "k_extra_rad_per_m": 0.4,
+          "dk_rad_per_m": 3.141592653589793e-05,
+          "gamma_per_m": 7.5e-05
+        },
+        "fine_gamma_per_m": 5e-05
+      },
+      "check_pair": "(L=200 km, decay=15, k_extra=0.4 rad/m) -> (L=400 km, decay=20, k_extra=0.8 rad/m)",
+      "evaluation": "z=50,100 m; r=55:5:2000 m; 390 points per line; maximum of the two line RMS changes",
+      "datasets": [
+        {
+          "path": "data/references/checks/C4_f030_reference.npz",
+          "format": "paired_complex_npz",
+          "layout": "pressure[depth,range]",
+          "n_points": 780,
+          "shape": [
+            2,
+            390
+          ],
+          "source_paths": [
+            "paper/experiments/matrix_completion_20261011/c3v2/runs/dgm_030_coarse_r1/field.npz",
+            "paper/experiments/matrix_completion_20261011/c3v2/runs/dgm_030_fine_r1/field.npz"
+          ],
+          "aggregation": "max_receiver_line_rms"
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C4_f030_reference/coarse_settings.json",
+          "source_path": "paper/experiments/matrix_completion_20261011/c3v2/runs/dgm_030_coarse_r1/run_record.json"
+        },
+        {
+          "path": "data/references/inputs/C4_f030_reference/fine_settings.json",
+          "source_path": "paper/experiments/matrix_completion_20261011/c3v2/runs/dgm_030_fine_r1/run_record.json"
+        }
+      ],
+      "notes": [
+        "Table III RAM/SMPE use T1d scores and FOR3D uses T1b; all select the original T1a DGM fine receiver-reference files. T1d starter changes do not replace these receiver-reference files.",
+        "The t1b_reference_scores001 convergence.csv contains SCOOTER cross-checks; it is not the Table III DGM reference ladder."
+      ],
+      "source_records": [
+        {
+          "kind": "convergence",
+          "solver": "dgm",
+          "frequency_hz": "30",
+          "line": "z50m_range",
+          "n_points": "390",
+          "mae_db": "5.456685076810845e-05",
+          "rmse_db": "8.789391774351932e-05",
+          "p95_abs_db": "0.00018061005494436128",
+          "max_abs_db": "0.00046860629186057053",
+          "bias_db": "3.043927988676599e-07",
+          "complex_relative_l2": "3.0669869235206277e-06",
+          "complex_relative_l2_db": "-110.26576151363976",
+          "status": "formal_pass",
+          "reference_level": "fine",
+          "test_level": "coarse"
+        },
+        {
+          "kind": "convergence",
+          "solver": "dgm",
+          "frequency_hz": "30",
+          "line": "z100m_range",
+          "n_points": "390",
+          "mae_db": "4.907488117467226e-05",
+          "rmse_db": "7.065841868656206e-05",
+          "p95_abs_db": "0.00013079947260138806",
+          "max_abs_db": "0.0003472586097351748",
+          "bias_db": "2.6103135890446504e-06",
+          "complex_relative_l2": "3.280079974554572e-06",
+          "complex_relative_l2_db": "-109.68231134476449",
+          "status": "formal_pass",
+          "reference_level": "fine",
+          "test_level": "coarse"
+        }
+      ],
+      "kind": "archived_pair",
+      "aggregation": "max_receiver_line_rms"
+    },
+    {
+      "id": "C4_f090_reference",
+      "case": "C4",
+      "frequency_hz": 90,
+      "reference": "DGM wavenumber integration",
+      "expected_display": "1.53e-05",
+      "scoring_configuration": {
+        "method": "stable_dgm_wavenumber_integration_trapezoid_shifted_contour",
+        "time_convention": "e^{-iwt}",
+        "source_normalisation": "free-field exp(ikR)/(4 pi R)",
+        "frequency_hz": 90.0,
+        "layer_tops_m": [
+          0.0,
+          200.0,
+          220.0,
+          260.0,
+          320.0
+        ],
+        "c_mps": [
+          1500.0,
+          1560.0,
+          1650.0,
+          1800.0,
+          2400.0
+        ],
+        "rho_kg_m3": [
+          1024.0,
+          1500.0,
+          1700.0,
+          1900.0,
+          2200.0
+        ],
+        "attenuation_db_per_wavelength": [
+          0.0,
+          0.2,
+          0.3,
+          0.5,
+          0.1
+        ],
+        "attenuation_conversion": "AT CRCI W conjugated: c*(1-i*a/(8.6858896*2*pi))",
+        "source_depth_m": 100.0,
+        "settings": {
+          "range_window_m": 400000,
+          "contour_decay": 20,
+          "k_extra_rad_per_m": 0.8
+        },
+        "nk": 74930,
+        "dk_rad_per_m": 1.5707963267948964e-05,
+        "kmax_rad_per_m": 1.1769819797041479,
+        "contour_offset_gamma": 5e-05,
+        "quadrature": "Trapezoidal integration, exact J0, shifted contour k=j*dk-i*gamma, analytic direct field",
+        "coarse_settings": {
+          "range_window_m": 200000,
+          "contour_decay": 15,
+          "k_extra_rad_per_m": 0.4,
+          "dk_rad_per_m": 3.141592653589793e-05,
+          "gamma_per_m": 7.5e-05
+        },
+        "fine_gamma_per_m": 5e-05
+      },
+      "check_pair": "(L=200 km, decay=15, k_extra=0.4 rad/m) -> (L=400 km, decay=20, k_extra=0.8 rad/m)",
+      "evaluation": "z=50,100 m; r=52:2:500 m; 225 points per line; maximum of the two line RMS changes",
+      "datasets": [
+        {
+          "path": "data/references/checks/C4_f090_reference.npz",
+          "format": "paired_complex_npz",
+          "layout": "pressure[depth,range]",
+          "n_points": 450,
+          "shape": [
+            2,
+            225
+          ],
+          "source_paths": [
+            "paper/experiments/matrix_completion_20261011/c3v2/runs/dgm_090_coarse_r1/field.npz",
+            "paper/experiments/matrix_completion_20261011/c3v2/runs/dgm_090_fine_r1/field.npz"
+          ],
+          "aggregation": "max_receiver_line_rms"
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C4_f090_reference/coarse_settings.json",
+          "source_path": "paper/experiments/matrix_completion_20261011/c3v2/runs/dgm_090_coarse_r1/run_record.json"
+        },
+        {
+          "path": "data/references/inputs/C4_f090_reference/fine_settings.json",
+          "source_path": "paper/experiments/matrix_completion_20261011/c3v2/runs/dgm_090_fine_r1/run_record.json"
+        }
+      ],
+      "notes": [
+        "Table III RAM/SMPE use T1d scores and FOR3D uses T1b; all select the original T1a DGM fine receiver-reference files. T1d starter changes do not replace these receiver-reference files.",
+        "The t1b_reference_scores001 convergence.csv contains SCOOTER cross-checks; it is not the Table III DGM reference ladder."
+      ],
+      "source_records": [
+        {
+          "kind": "convergence",
+          "solver": "dgm",
+          "frequency_hz": "90",
+          "line": "z50m_range",
+          "n_points": "225",
+          "mae_db": "5.9780218557410864e-06",
+          "rmse_db": "8.86186151252704e-06",
+          "p95_abs_db": "2.0099764820458503e-05",
+          "max_abs_db": "5.151703544869083e-05",
+          "bias_db": "-2.7842941525664552e-08",
+          "complex_relative_l2": "6.004598900196429e-07",
+          "complex_relative_l2_db": "-124.43031995256297",
+          "status": "formal_pass",
+          "reference_level": "fine",
+          "test_level": "coarse"
+        },
+        {
+          "kind": "convergence",
+          "solver": "dgm",
+          "frequency_hz": "90",
+          "line": "z100m_range",
+          "n_points": "225",
+          "mae_db": "7.167828018158021e-06",
+          "rmse_db": "1.5303314184364017e-05",
+          "p95_abs_db": "2.2014913236222683e-05",
+          "max_abs_db": "0.00018509483043487973",
+          "bias_db": "1.3371884713280636e-06",
+          "complex_relative_l2": "5.982348350353045e-07",
+          "complex_relative_l2_db": "-124.46256603461518",
+          "status": "formal_pass",
+          "reference_level": "fine",
+          "test_level": "coarse"
+        }
+      ],
+      "kind": "archived_pair",
+      "aggregation": "max_receiver_line_rms"
+    },
+    {
+      "id": "C4_f200_reference",
+      "case": "C4",
+      "frequency_hz": 200,
+      "reference": "DGM wavenumber integration",
+      "expected_display": "1.16e-05",
+      "scoring_configuration": {
+        "method": "stable_dgm_wavenumber_integration_trapezoid_shifted_contour",
+        "time_convention": "e^{-iwt}",
+        "source_normalisation": "free-field exp(ikR)/(4 pi R)",
+        "frequency_hz": 200.0,
+        "layer_tops_m": [
+          0.0,
+          200.0,
+          220.0,
+          260.0,
+          320.0
+        ],
+        "c_mps": [
+          1500.0,
+          1560.0,
+          1650.0,
+          1800.0,
+          2400.0
+        ],
+        "rho_kg_m3": [
+          1024.0,
+          1500.0,
+          1700.0,
+          1900.0,
+          2200.0
+        ],
+        "attenuation_db_per_wavelength": [
+          0.0,
+          0.2,
+          0.3,
+          0.5,
+          0.1
+        ],
+        "attenuation_conversion": "AT CRCI W conjugated: c*(1-i*a/(8.6858896*2*pi))",
+        "source_depth_m": 100.0,
+        "settings": {
+          "range_window_m": 400000,
+          "contour_decay": 20,
+          "k_extra_rad_per_m": 0.8
+        },
+        "nk": 104263,
+        "dk_rad_per_m": 1.5707963267948964e-05,
+        "kmax_rad_per_m": 1.6377436662428948,
+        "contour_offset_gamma": 5e-05,
+        "quadrature": "Trapezoidal integration, exact J0, shifted contour k=j*dk-i*gamma, analytic direct field",
+        "coarse_settings": {
+          "range_window_m": 200000,
+          "contour_decay": 15,
+          "k_extra_rad_per_m": 0.4,
+          "dk_rad_per_m": 3.141592653589793e-05,
+          "gamma_per_m": 7.5e-05
+        },
+        "fine_gamma_per_m": 5e-05
+      },
+      "check_pair": "(L=200 km, decay=15, k_extra=0.4 rad/m) -> (L=400 km, decay=20, k_extra=0.8 rad/m)",
+      "evaluation": "z=50,100 m; r=52:2:500 m; 225 points per line; maximum of the two line RMS changes",
+      "datasets": [
+        {
+          "path": "data/references/checks/C4_f200_reference.npz",
+          "format": "paired_complex_npz",
+          "layout": "pressure[depth,range]",
+          "n_points": 450,
+          "shape": [
+            2,
+            225
+          ],
+          "source_paths": [
+            "paper/experiments/matrix_completion_20261011/c3v2/runs/dgm_200_coarse_r1/field.npz",
+            "paper/experiments/matrix_completion_20261011/c3v2/runs/dgm_200_fine_r1/field.npz"
+          ],
+          "aggregation": "max_receiver_line_rms"
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C4_f200_reference/coarse_settings.json",
+          "source_path": "paper/experiments/matrix_completion_20261011/c3v2/runs/dgm_200_coarse_r1/run_record.json"
+        },
+        {
+          "path": "data/references/inputs/C4_f200_reference/fine_settings.json",
+          "source_path": "paper/experiments/matrix_completion_20261011/c3v2/runs/dgm_200_fine_r1/run_record.json"
+        }
+      ],
+      "notes": [
+        "Table III RAM/SMPE use T1d scores and FOR3D uses T1b; all select the original T1a DGM fine receiver-reference files. T1d starter changes do not replace these receiver-reference files.",
+        "The t1b_reference_scores001 convergence.csv contains SCOOTER cross-checks; it is not the Table III DGM reference ladder."
+      ],
+      "source_records": [
+        {
+          "kind": "convergence",
+          "solver": "dgm",
+          "frequency_hz": "200",
+          "line": "z50m_range",
+          "n_points": "225",
+          "mae_db": "6.147279772574348e-06",
+          "rmse_db": "1.1619150147533799e-05",
+          "p95_abs_db": "2.031738244235521e-05",
+          "max_abs_db": "0.00011224192712416994",
+          "bias_db": "-2.7098131498689493e-07",
+          "complex_relative_l2": "4.7590533153322453e-07",
+          "complex_relative_l2_db": "-126.44958859608245",
+          "status": "formal_pass",
+          "reference_level": "fine",
+          "test_level": "coarse"
+        },
+        {
+          "kind": "convergence",
+          "solver": "dgm",
+          "frequency_hz": "200",
+          "line": "z100m_range",
+          "n_points": "225",
+          "mae_db": "3.0543478006348176e-06",
+          "rmse_db": "5.140324200585071e-06",
+          "p95_abs_db": "9.293370718025573e-06",
+          "max_abs_db": "4.354885570046057e-05",
+          "bias_db": "-2.2382828355365811e-07",
+          "complex_relative_l2": "2.7966638253928996e-07",
+          "complex_relative_l2_db": "-131.06719470225414",
+          "status": "formal_pass",
+          "reference_level": "fine",
+          "test_level": "coarse"
+        }
+      ],
+      "kind": "archived_pair",
+      "aggregation": "max_receiver_line_rms"
+    },
+    {
+      "id": "C5_f050_reference",
+      "case": "C5",
+      "frequency_hz": 50,
+      "reference": "SCOOTER/FIELDS L3",
+      "expected_display": "0.09",
+      "scoring_configuration": {
+        "level": "L3",
+        "vertical_mesh": 32000,
+        "spectral_range_window_km": 1600,
+        "cphase_bounds_mps": [
+          1400,
+          100000000.0
+        ],
+        "SCOOTER_option": "CVW",
+        "FIELDS_option": "RP",
+        "water_depth_m": 5000,
+        "source_depth_m": 1000,
+        "receiver_depths_m": [
+          1000,
+          2500
+        ],
+        "bottom": "Acoustic outgoing half-space (A), c=1600 m/s, rho=1.8 g/cm3, attenuation=0.8 dB/wavelength",
+        "water_profile": "27 explicit c-linear SSP depth nodes in the exact archived munk.env",
+        "actual_env_text": "'T6 unified c-linear Munk'\n50\n1\n'CVW'\n32000 0 5000\n0 1548.52 0 1 0 0 /\n200 1530.29 /\n250 1526.69 /\n400 1517.78 /\n600 1509.49 /\n800 1504.3 /\n1000 1501.38 /\n1200 1500.14 /\n1400 1500.12 /\n1600 1501.02 /\n1800 1502.57 /\n2000 1504.62 /\n2200 1507.02 /\n2400 1509.69 /\n2600 1512.55 /\n2800 1515.56 /\n3000 1518.67 /\n3200 1521.85 /\n3400 1525.1 /\n3600 1528.38 /\n3800 1531.7 /\n4000 1535.04 /\n4200 1538.39 /\n4400 1541.76 /\n4600 1545.14 /\n4800 1548.52 /\n5000 1551.91 /\n'A' 0\n5000 1600 0 1.8 0.8 /\n1400 100000000\n1600\n1\n1000 /\n2\n1000 2500 /\n",
+        "actual_fields_text": "'RP'\n991\n1 100 /\n"
+      },
+      "check_pair": "L2 (mesh=16000, Rmax=800 km) -> L3 (mesh=32000, Rmax=1600 km)",
+      "evaluation": "z=1000,2500 m; r=1:0.1:100 km; 991 points per line; maximum of line RMS changes",
+      "datasets": [
+        {
+          "path": "data/references/checks/C5_f050_reference.npz",
+          "format": "paired_complex_npz",
+          "layout": "pressure[depth,range]",
+          "n_points": 1982,
+          "shape": [
+            2,
+            991
+          ],
+          "source_paths": [
+            "paper/experiments/matrix_completion_20261011/n2_munk/runs/reference/scooter_L2_r1/receiver_lines.npz",
+            "paper/experiments/matrix_completion_20261011/n2_munk/runs/reference/scooter_L3_r1/receiver_lines.npz"
+          ],
+          "aggregation": "max_receiver_line_rms"
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C5_f050_reference/L2/munk.env",
+          "source_path": "paper/experiments/matrix_completion_20261011/n2_munk/runs/reference/scooter_L2_r1/munk.env",
+          "sha256": "02deaab34b7aa7dbbcf1967e7287507326aeef59617ada21eef23d132c028b14"
+        },
+        {
+          "path": "data/references/inputs/C5_f050_reference/L2/munk.flp",
+          "source_path": "paper/experiments/matrix_completion_20261011/n2_munk/runs/reference/scooter_L2_r1/munk.flp",
+          "sha256": "ed7130458aa60dfe0c5d197d8e251e5dc5389d1ea45814d8c99c32577b80c8c2"
+        },
+        {
+          "path": "data/references/inputs/C5_f050_reference/L3/munk.env",
+          "source_path": "paper/experiments/matrix_completion_20261011/n2_munk/runs/reference/scooter_L3_r1/munk.env",
+          "sha256": "281af04bf361e1f855dfc88b845dfec357f333f7542697fdabf3d99a41d8baf8"
+        },
+        {
+          "path": "data/references/inputs/C5_f050_reference/L2/munk.flp",
+          "source_path": "paper/experiments/matrix_completion_20261011/n2_munk/runs/reference/scooter_L3_r1/munk.flp",
+          "sha256": "ed7130458aa60dfe0c5d197d8e251e5dc5389d1ea45814d8c99c32577b80c8c2"
+        }
+      ],
+      "notes": [
+        "Same L3 full spectrum is used for the common starter, integrated using exact Hankel at r0=50 m on z=0:0.5:5520 m; this is a different evaluation of the spectrum from the FIELDS far-range receiver field.",
+        "Pressure adapter is p_1m=-conj(p_AT).",
+        "Do not substitute the trapped-mode T6c branch for the full-spectrum T6b score.",
+        "Both archived receiver arrays are converted by -conjugate to the paper convention; this leaves the level-to-level SPL difference unchanged."
+      ],
+      "source_records": [
+        {
+          "coarse_level": "2",
+          "fine_level": "3",
+          "window": "main_1_100km",
+          "receiver": "z1000",
+          "status": "formal_pass",
+          "n_points": "991",
+          "mae_db": "0.04729994747519147",
+          "rmse_db": "0.0888146799453385",
+          "p95_abs_db": "0.16807144149994258",
+          "max_abs_db": "0.9439602420257692",
+          "bias_db": "-0.005111699527677082",
+          "complex_relative_l2": "0.002608759632889874",
+          "complex_relative_l2_db": "-51.67131868567349"
+        },
+        {
+          "coarse_level": "2",
+          "fine_level": "3",
+          "window": "main_1_100km",
+          "receiver": "z2500",
+          "status": "formal_pass",
+          "n_points": "991",
+          "mae_db": "0.027017574675657366",
+          "rmse_db": "0.05671167806141312",
+          "p95_abs_db": "0.08247957907955705",
+          "max_abs_db": "0.6199837980355897",
+          "bias_db": "0.008334586603131255",
+          "complex_relative_l2": "0.0017799686596772632",
+          "complex_relative_l2_db": "-54.99175288695752"
+        }
+      ],
+      "kind": "archived_pair",
+      "aggregation": "max_receiver_line_rms"
+    },
+    {
+      "id": "C6_f025_reference",
+      "case": "C6",
+      "frequency_hz": 25,
+      "reference": "COUPLE07 single-scattering coupled modes",
+      "expected_display": "0.04",
+      "scoring_configuration": {
+        "M": 90,
+        "N": 800,
+        "HB_m": 1500,
+        "IOUT": -1,
+        "IGEOM": 0,
+        "IREFL": 0,
+        "source_depth_m": 100,
+        "water": {
+          "c_mps": 1500,
+          "rho_g_cm3": 1,
+          "attenuation_dB_per_wavelength": 0
+        },
+        "bottom": {
+          "c_mps": 1700,
+          "rho_g_cm3": 1.5,
+          "attenuation_dB_per_wavelength": 0.5
+        },
+        "absorber": "COUPLE test2 inherited profile: 0.5 dB/wavelength at seabed and 1000 m, 2.5 at HB=1500 m; geometry translation follows native input",
+        "output_depth_m": "1:1:400",
+        "output_range_step_m": 2,
+        "actual_input_header": [
+          "case07 ASA wedge 25 Hz M=90 N=800 IOUT=-1",
+          "1500.0  25.0000  100.0                 !HB,FREQ,ZS",
+          "90  0  0                         !M,IGEOM,IREFL",
+          "400  1.000000  1.000000               !NDEP,ZMIN,ZINC",
+          "0.0020000  4.0000000  0.0020000    !RMIN,RMAX,RINC",
+          "2  800  -1                      !N,IPRT,IOUT",
+          "0.00  800  200.0  2  3                  !RANGE,IRLIN,DPTH,NPW,NPB",
+          "0.0     1500.0  0.0  1.00               !DEPW,SVPW,DBPWLW,RHOW",
+          "200.0   1500.0  0.0  1.00",
+          "200.0   1700.0  0.50  1.50   !DEPB,SVPB,DBPWLB,RHOB",
+          "1000.0  1700.0  0.50  1.50",
+          "1500.0  1700.0  2.50  1.50",
+          "4.000000000  0  0.010000000  -2  -3                 !RANGE,IRLIN,DPTH,NPW,NPB"
+        ],
+        "actual_input_environment_count": 2,
+        "bathymetry": "H(r)=200(1-r/4000), numerical final H(4000)=0.01 m"
+      },
+      "check_pair": "M60/N400 -> M90/N800",
+      "evaluation": "z=30,150 m; r=56:6:3998 m; 658 points per line; maximum of line RMS changes",
+      "datasets": [
+        {
+          "path": "data/references/checks/C6_f025_reference.npz",
+          "format": "paired_complex_npz",
+          "layout": "pressure[depth,range]",
+          "n_points": 1316,
+          "shape": [
+            2,
+            658
+          ],
+          "source_paths": [
+            "paper/experiments/reference_fullfield_c6_c8_20261106/runs/C6_025Hz/COUPLE.CPR",
+            "case07_asa_wedge_range_dependent/reference/couple_runs/f025hz/grid_M090_N0800/COUPLE.CPR"
+          ],
+          "aggregation": "max_receiver_line_rms"
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C6_f025_reference/check_coarse/COUPLE.DAT",
+          "source_path": "paper/experiments/reference_fullfield_c6_c8_20261106/runs/C6_025Hz/COUPLE.DAT",
+          "sha256": "233c23fe4ae8ad5359af926eb9be01af5df743428060e36816fca0c039e866b5"
+        },
+        {
+          "path": "data/references/inputs/C6_f025_reference/check_fine/COUPLE.DAT",
+          "source_path": "case07_asa_wedge_range_dependent/reference/couple_runs/f025hz/grid_M090_N0800/COUPLE.DAT",
+          "sha256": "62c0d5ee79743ae0fce2382ef18b3e7952c655070adb826c0ee2cb90fc8fa3fe"
+        },
+        {
+          "path": "data/references/inputs/C6_f025_reference/check_fine/COUPLE.DAT",
+          "source_path": "case07_asa_wedge_range_dependent/reference/couple_runs/f025hz/grid_M090_N0800/COUPLE.DAT",
+          "sha256": "62c0d5ee79743ae0fce2382ef18b3e7952c655070adb826c0ee2cb90fc8fa3fe"
+        }
+      ],
+      "notes": [
+        "Reference output z=1..400 m excludes pressure-release z=0. Primary full-field PE scores use z=1..300 m; the Table III C7/C8 reference checks use z=1..400 m.",
+        "C6 raw COUPLE.CPR was reread and D_SPL independently recomputed in this audit; differs from the original T2 0.030955 both-line metric because the final Table III check uses PE receiver points and maximum of individual line RMS.",
+        "Native C6 input specifies two environments with IRLIN=N; N is not the count of explicit environment headers.",
+        "COUPLE native float32 range coordinates are snapped to the recorded 2 m (25 Hz) or 0.5 m (100 Hz) output lattice before exact point selection, as in the archived evaluation code."
+      ],
+      "source_records": [
+        {
+          "case": "C6",
+          "frequency_hz": 25,
+          "receiver_m": 30,
+          "n": 658,
+          "rmin_m": 56.0,
+          "rmax_m": 3998.0,
+          "rstep_m": 6.0,
+          "D_SPL": 0.007419016899785157,
+          "coarse": "paper/experiments/reference_fullfield_c6_c8_20261106/runs/C6_025Hz",
+          "fine": "case07_asa_wedge_range_dependent/reference/couple_runs/f025hz/grid_M090_N0800"
+        },
+        {
+          "case": "C6",
+          "frequency_hz": 25,
+          "receiver_m": 150,
+          "n": 658,
+          "rmin_m": 56.0,
+          "rmax_m": 3998.0,
+          "rstep_m": 6.0,
+          "D_SPL": 0.03775325287468733,
+          "coarse": "paper/experiments/reference_fullfield_c6_c8_20261106/runs/C6_025Hz",
+          "fine": "case07_asa_wedge_range_dependent/reference/couple_runs/f025hz/grid_M090_N0800"
+        }
+      ],
+      "kind": "archived_pair",
+      "aggregation": "max_receiver_line_rms"
+    },
+    {
+      "id": "C6_f100_reference",
+      "case": "C6",
+      "frequency_hz": 100,
+      "reference": "COUPLE07 single-scattering coupled modes",
+      "expected_display": "0.05",
+      "scoring_configuration": {
+        "M": 300,
+        "N": 3200,
+        "HB_m": 1500,
+        "IOUT": -1,
+        "IGEOM": 0,
+        "IREFL": 0,
+        "source_depth_m": 100,
+        "water": {
+          "c_mps": 1500,
+          "rho_g_cm3": 1,
+          "attenuation_dB_per_wavelength": 0
+        },
+        "bottom": {
+          "c_mps": 1700,
+          "rho_g_cm3": 1.5,
+          "attenuation_dB_per_wavelength": 0.5
+        },
+        "absorber": "COUPLE test2 inherited profile: 0.5 dB/wavelength at seabed and 1000 m, 2.5 at HB=1500 m; geometry translation follows native input",
+        "output_depth_m": "1:1:400",
+        "output_range_step_m": 0.5,
+        "actual_input_header": [
+          "case07 ASA wedge 100 Hz M=300 N=3200 IOUT=-1",
+          "1500.0  100.0000  100.0                 !HB,FREQ,ZS",
+          "300  0  0                         !M,IGEOM,IREFL",
+          "400  1.000000  1.000000               !NDEP,ZMIN,ZINC",
+          "0.0005000  4.0000000  0.0005000    !RMIN,RMAX,RINC",
+          "2  3200  -1                      !N,IPRT,IOUT",
+          "0.00  3200  200.0  2  3                  !RANGE,IRLIN,DPTH,NPW,NPB",
+          "0.0     1500.0  0.0  1.00               !DEPW,SVPW,DBPWLW,RHOW",
+          "200.0   1500.0  0.0  1.00",
+          "200.0   1700.0  0.50  1.50   !DEPB,SVPB,DBPWLB,RHOB",
+          "1000.0  1700.0  0.50  1.50",
+          "1500.0  1700.0  2.50  1.50",
+          "4.000000000  0  0.010000000  -2  -3                 !RANGE,IRLIN,DPTH,NPW,NPB"
+        ],
+        "actual_input_environment_count": 2,
+        "bathymetry": "H(r)=200(1-r/4000), numerical final H(4000)=0.01 m"
+      },
+      "check_pair": "M300/N1600 -> M300/N3200",
+      "evaluation": "z=30,150 m; r=51.5:1.5:3999.5 m; 2633 points per line; maximum of line RMS changes",
+      "datasets": [
+        {
+          "path": "data/references/checks/C6_f100_reference.npz",
+          "format": "paired_complex_npz",
+          "layout": "pressure[depth,range]",
+          "n_points": 5266,
+          "shape": [
+            2,
+            2633
+          ],
+          "source_paths": [
+            "case07_asa_wedge_range_dependent/reference/couple_runs/f100hz/grid_M300_N1600/COUPLE.CPR",
+            "paper/experiments/matrix_completion_20261011/c7_ref100/runs/A_grid/COUPLE.CPR"
+          ],
+          "aggregation": "max_receiver_line_rms"
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C6_f100_reference/check_coarse/COUPLE.DAT",
+          "source_path": "case07_asa_wedge_range_dependent/reference/couple_runs/f100hz/grid_M300_N1600/COUPLE.DAT",
+          "sha256": "35cc75d8eaf88abe7ee3634dd9d19475797cff6223bfe855f893aa080d9e2bec"
+        },
+        {
+          "path": "data/references/inputs/C6_f100_reference/check_fine/COUPLE.DAT",
+          "source_path": "paper/experiments/matrix_completion_20261011/c7_ref100/runs/A_grid/COUPLE.DAT",
+          "sha256": "9143be8f910cb2ea1d00314574465f7266cafca41fad9b452a6c8412c4a8891e"
+        },
+        {
+          "path": "data/references/inputs/C6_f100_reference/check_fine/COUPLE.DAT",
+          "source_path": "paper/experiments/matrix_completion_20261011/c7_ref100/runs/A_grid/COUPLE.DAT",
+          "sha256": "9143be8f910cb2ea1d00314574465f7266cafca41fad9b452a6c8412c4a8891e"
+        }
+      ],
+      "notes": [
+        "Reference output z=1..400 m excludes pressure-release z=0. Primary full-field PE scores use z=1..300 m; the Table III C7/C8 reference checks use z=1..400 m.",
+        "C6 raw COUPLE.CPR was reread and D_SPL independently recomputed in this audit; differs from the original T2 0.030955 both-line metric because the final Table III check uses PE receiver points and maximum of individual line RMS.",
+        "Native C6 input specifies two environments with IRLIN=N; N is not the count of explicit environment headers.",
+        "COUPLE native float32 range coordinates are snapped to the recorded 2 m (25 Hz) or 0.5 m (100 Hz) output lattice before exact point selection, as in the archived evaluation code."
+      ],
+      "source_records": [
+        {
+          "case": "C6",
+          "frequency_hz": 100,
+          "receiver_m": 30,
+          "n": 2633,
+          "rmin_m": 51.5,
+          "rmax_m": 3999.5,
+          "rstep_m": 1.5,
+          "D_SPL": 0.020408653018249172,
+          "coarse": "case07_asa_wedge_range_dependent/reference/couple_runs/f100hz/grid_M300_N1600",
+          "fine": "paper/experiments/matrix_completion_20261011/c7_ref100/runs/A_grid"
+        },
+        {
+          "case": "C6",
+          "frequency_hz": 100,
+          "receiver_m": 150,
+          "n": 2633,
+          "rmin_m": 51.5,
+          "rmax_m": 3999.5,
+          "rstep_m": 1.5,
+          "D_SPL": 0.051907876042748685,
+          "coarse": "case07_asa_wedge_range_dependent/reference/couple_runs/f100hz/grid_M300_N1600",
+          "fine": "paper/experiments/matrix_completion_20261011/c7_ref100/runs/A_grid"
+        }
+      ],
+      "kind": "archived_pair",
+      "aggregation": "max_receiver_line_rms"
+    },
+    {
+      "id": "C7_f025_reference",
+      "case": "C7",
+      "frequency_hz": 25,
+      "reference": "COUPLE07 single-scattering coupled modes",
+      "expected_display": "0.04",
+      "scoring_configuration": {
+        "M": 90,
+        "N": 800,
+        "HB_m": 1500,
+        "IOUT": -1,
+        "IGEOM": 0,
+        "IREFL": 0,
+        "source_depth_m": 100,
+        "water": {
+          "c_mps": 1500,
+          "rho_g_cm3": 1,
+          "attenuation_dB_per_wavelength": 0
+        },
+        "bottom": {
+          "c_mps": 1700,
+          "rho_g_cm3": 1.5,
+          "attenuation_dB_per_wavelength": 0.5
+        },
+        "absorber": "COUPLE test2 inherited profile: 0.5 dB/wavelength at seabed and 1000 m, 2.5 at HB=1500 m; geometry translation follows native input",
+        "output_depth_m": "1:1:400",
+        "output_range_step_m": 2,
+        "actual_input_header": [
+          "T7 n3a 25Hz M=90 N=800 grid IOUT=-1",
+          "1500 25 100",
+          "90 0 0",
+          "400 1 1",
+          "0.0020000 4.0000000 0.0020000",
+          "802 800 -1",
+          "0.000000000 0 200.000000000 2 3",
+          "0 1500 0 1",
+          "200.000000000 1500 0 1",
+          "200.000000000 1700 .5 1.5",
+          "1000 1700 .5 1.5",
+          "1500 1700 2.5 1.5",
+          "0.002500000 0 200.250000000 -2 -3"
+        ],
+        "actual_input_environment_count": 802,
+        "bathymetry": "H(r)=200(1+r/4000)"
+      },
+      "check_pair": "M60/N400 -> M90/N800",
+      "evaluation": "r=56:6:3998 m, z=1:1:400 m; 263200 full-field points",
+      "datasets": [
+        {
+          "path": "data/references/checks/C7_f025_reference.npz",
+          "format": "paired_complex_npz",
+          "layout": "pressure[depth,range]",
+          "n_points": 263200,
+          "shape": [
+            400,
+            658
+          ],
+          "source_paths": [
+            "paper/experiments/reference_fullfield_c6_c8_20261106/runs/C7_025Hz/COUPLE.CPR",
+            "paper/experiments/matrix_completion_20261011/n3_slope_seamount/runs/v1/n3a/f025hz/grid_M090_N0800_IOUT-1/COUPLE.CPR"
+          ],
+          "aggregation": "full_field_rms"
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C7_f025_reference/check_coarse/COUPLE.DAT",
+          "source_path": "paper/experiments/reference_fullfield_c6_c8_20261106/runs/C7_025Hz/COUPLE.DAT",
+          "sha256": "f6c6cf7c1f47656af4ddc8d35e7fc971c3fd4f9a199ca071961586d0ff20af70"
+        },
+        {
+          "path": "data/references/inputs/C7_f025_reference/check_fine/COUPLE.DAT",
+          "source_path": "paper/experiments/matrix_completion_20261011/n3_slope_seamount/runs/v1/n3a/f025hz/grid_M090_N0800_IOUT-1/COUPLE.DAT",
+          "sha256": "03a9aa02cf05e1c0ff32198a0cc24e085abef48a873fa6712a37cbac9c38068d"
+        },
+        {
+          "path": "data/references/inputs/C7_f025_reference/check_fine/COUPLE.DAT",
+          "source_path": "paper/experiments/matrix_completion_20261011/n3_slope_seamount/runs/v1/n3a/f025hz/grid_M090_N0800_IOUT-1/COUPLE.DAT",
+          "sha256": "03a9aa02cf05e1c0ff32198a0cc24e085abef48a873fa6712a37cbac9c38068d"
+        }
+      ],
+      "notes": [
+        "Reference output z=1..400 m excludes pressure-release z=0. Primary full-field PE scores use z=1..300 m; the Table III C7/C8 reference checks use z=1..400 m.",
+        "Main full reference input has N+2 explicit environments; nodes j*4000/N with transition interfaces (j-0.5)*4000/N.",
+        "COUPLE native float32 range coordinates are snapped to the recorded 2 m (25 Hz) or 0.5 m (100 Hz) output lattice before exact point selection, as in the archived evaluation code."
+      ],
+      "source_records": [
+        {
+          "case": "C7",
+          "frequency_hz": "25",
+          "modes_from": "60",
+          "steps_from": "400",
+          "modes_to": "90",
+          "steps_to": "800",
+          "region": "field_0_400m",
+          "n_points": "263200",
+          "mae_db": "0.01049691195993118",
+          "rmse_db": "0.03794322195596502",
+          "p95_abs_db": "0.03997305589358492",
+          "max_abs_db": "4.870821726624782",
+          "bias_db": "-0.0004414301879418789",
+          "complex_relative_l2": "0.001683429671646468",
+          "complex_relative_l2_db": "-55.476100446864464",
+          "threshold_db": "0.1",
+          "status": "PASS",
+          "independent_rmse_db": "0.037943221955965015",
+          "coarse_path": "paper/experiments/reference_fullfield_c6_c8_20261106/runs/C7_025Hz",
+          "fine_path": "paper/experiments/matrix_completion_20261011/n3_slope_seamount/runs/v1/n3a/f025hz/grid_M090_N0800_IOUT-1"
+        }
+      ],
+      "kind": "archived_pair",
+      "aggregation": "full_field_rms"
+    },
+    {
+      "id": "C7_f100_reference",
+      "case": "C7",
+      "frequency_hz": 100,
+      "reference": "COUPLE07 single-scattering coupled modes",
+      "expected_display": "0.07",
+      "scoring_configuration": {
+        "M": 300,
+        "N": 1600,
+        "HB_m": 1500,
+        "IOUT": -1,
+        "IGEOM": 0,
+        "IREFL": 0,
+        "source_depth_m": 100,
+        "water": {
+          "c_mps": 1500,
+          "rho_g_cm3": 1,
+          "attenuation_dB_per_wavelength": 0
+        },
+        "bottom": {
+          "c_mps": 1700,
+          "rho_g_cm3": 1.5,
+          "attenuation_dB_per_wavelength": 0.5
+        },
+        "absorber": "COUPLE test2 inherited profile: 0.5 dB/wavelength at seabed and 1000 m, 2.5 at HB=1500 m; geometry translation follows native input",
+        "output_depth_m": "1:1:400",
+        "output_range_step_m": 0.5,
+        "actual_input_header": [
+          "T7 n3a 100Hz M=300 N=1600 grid IOUT=-1",
+          "1500 100 100",
+          "300 0 0",
+          "400 1 1",
+          "0.0005000 4.0000000 0.0005000",
+          "1602 1600 -1",
+          "0.000000000 0 200.000000000 2 3",
+          "0 1500 0 1",
+          "200.000000000 1500 0 1",
+          "200.000000000 1700 .5 1.5",
+          "1000 1700 .5 1.5",
+          "1500 1700 2.5 1.5",
+          "0.001250000 0 200.125000000 -2 -3"
+        ],
+        "actual_input_environment_count": 1602,
+        "bathymetry": "H(r)=200(1+r/4000)"
+      },
+      "check_pair": "M300/N3200 -> M300/N6400",
+      "evaluation": "r=56:6:3998 m, z=1:1:400 m; 263200 full-field points",
+      "datasets": [
+        {
+          "path": "data/references/checks/C7_f100_reference.npz",
+          "format": "paired_complex_npz",
+          "layout": "pressure[depth,range]",
+          "n_points": 263200,
+          "shape": [
+            400,
+            658
+          ],
+          "source_paths": [
+            "paper/experiments/reference_fullfield_c7_c8_refine_20261110/runs/C7_100Hz_M300_N3200/COUPLE.CPR",
+            "paper/experiments/reference_fullfield_c7_c8_refine2_20261110/runs/C7_100Hz_M300_N6400/COUPLE.CPR"
+          ],
+          "aggregation": "full_field_rms"
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C7_f100_reference/check_coarse/COUPLE.DAT",
+          "source_path": "paper/experiments/reference_fullfield_c7_c8_refine_20261110/runs/C7_100Hz_M300_N3200/COUPLE.DAT",
+          "sha256": "28ad156d9b7cff31022797d35fbb0ac70edf94a3ac4a704de78f79a7f6e2760c"
+        },
+        {
+          "path": "data/references/inputs/C7_f100_reference/check_fine/COUPLE.DAT",
+          "source_path": "paper/experiments/reference_fullfield_c7_c8_refine2_20261110/runs/C7_100Hz_M300_N6400/COUPLE.DAT",
+          "sha256": "c5e7094be4717c4594311d2f3b0317f84f87e719bc4a463039279b52d952b47b"
+        },
+        {
+          "path": "data/references/inputs/C7_f100_reference/scoring/COUPLE.DAT",
+          "source_path": "paper/experiments/matrix_completion_20261011/n3_slope_seamount/runs/v1/n3a/f100hz/grid_M300_N1600_IOUT-1/COUPLE.DAT",
+          "sha256": "ebcb2fc3e569dab87b2b8477ff7361512fdf8ba55f0fba4408c9804d8a66a55e"
+        }
+      ],
+      "notes": [
+        "Reference output z=1..400 m excludes pressure-release z=0. Primary full-field PE scores use z=1..300 m; the Table III C7/C8 reference checks use z=1..400 m.",
+        "Scoring reference is coarser than both terminal reference-check levels. The displayed D_SPL does not establish this earlier scoring field has the same error as the terminal check.",
+        "Main full reference input has N+2 explicit environments; nodes j*4000/N with transition interfaces (j-0.5)*4000/N.",
+        "COUPLE native float32 range coordinates are snapped to the recorded 2 m (25 Hz) or 0.5 m (100 Hz) output lattice before exact point selection, as in the archived evaluation code."
+      ],
+      "source_records": [
+        {
+          "case": "C7",
+          "frequency_hz": "100",
+          "M": "300",
+          "comparison": "latest",
+          "N_from": "3200",
+          "N_to": "6400",
+          "region": "field_0_400m",
+          "n_points": "263200",
+          "mae_db": "0.006015434804454084",
+          "rmse_db": "0.07461601238120116",
+          "p95_abs_db": "0.014244328462910925",
+          "max_abs_db": "13.515593982392915",
+          "bias_db": "-4.5237613688245967e-05",
+          "complex_relative_l2": "0.0004648292486621712",
+          "complex_relative_l2_db": "-66.65413104897534",
+          "independent_spl_rms_db": "0.07461601238120116",
+          "status": "PASS",
+          "complex_denominator": "norm(fine field)",
+          "amplitude_floor_hits": "0"
+        }
+      ],
+      "kind": "archived_pair",
+      "aggregation": "full_field_rms"
+    },
+    {
+      "id": "C8_f025_reference",
+      "case": "C8",
+      "frequency_hz": 25,
+      "reference": "COUPLE07 single-scattering coupled modes",
+      "expected_display": "0.04",
+      "scoring_configuration": {
+        "M": 90,
+        "N": 800,
+        "HB_m": 1500,
+        "IOUT": -1,
+        "IGEOM": 0,
+        "IREFL": 0,
+        "source_depth_m": 100,
+        "water": {
+          "c_mps": 1500,
+          "rho_g_cm3": 1,
+          "attenuation_dB_per_wavelength": 0
+        },
+        "bottom": {
+          "c_mps": 1700,
+          "rho_g_cm3": 1.5,
+          "attenuation_dB_per_wavelength": 0.5
+        },
+        "absorber": "COUPLE test2 inherited profile: 0.5 dB/wavelength at seabed and 1000 m, 2.5 at HB=1500 m; geometry translation follows native input",
+        "output_depth_m": "1:1:400",
+        "output_range_step_m": 2,
+        "actual_input_header": [
+          "T7 n3b 25Hz M=90 N=800 grid IOUT=-1",
+          "1500 25 100",
+          "90 0 0",
+          "400 1 1",
+          "0.0020000 4.0000000 0.0020000",
+          "802 800 -1",
+          "0.000000000 0 199.806954586 2 3",
+          "0 1500 0 1",
+          "199.806954586 1500 0 1",
+          "199.806954586 1700 .5 1.5",
+          "1000 1700 .5 1.5",
+          "1500 1700 2.5 1.5",
+          "0.002500000 0 199.800834447 -2 -3"
+        ],
+        "actual_input_environment_count": 802,
+        "bathymetry": "H(r)=200-100 exp(-((r-2000)/800)^2)"
+      },
+      "check_pair": "M60/N400 -> M90/N800",
+      "evaluation": "r=56:6:3998 m, z=1:1:400 m; 263200 full-field points",
+      "datasets": [
+        {
+          "path": "data/references/checks/C8_f025_reference.npz",
+          "format": "paired_complex_npz",
+          "layout": "pressure[depth,range]",
+          "n_points": 263200,
+          "shape": [
+            400,
+            658
+          ],
+          "source_paths": [
+            "paper/experiments/reference_fullfield_c6_c8_20261106/runs/C8_025Hz/COUPLE.CPR",
+            "paper/experiments/matrix_completion_20261011/n3_slope_seamount/runs/v1/n3b/f025hz/grid_M090_N0800_IOUT-1/COUPLE.CPR"
+          ],
+          "aggregation": "full_field_rms"
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C8_f025_reference/check_coarse/COUPLE.DAT",
+          "source_path": "paper/experiments/reference_fullfield_c6_c8_20261106/runs/C8_025Hz/COUPLE.DAT",
+          "sha256": "ee2e25e0a3adc016a9be26fcc1b7b73fd65ae6882f7d5a03bffd44d5e6aeaa5e"
+        },
+        {
+          "path": "data/references/inputs/C8_f025_reference/check_fine/COUPLE.DAT",
+          "source_path": "paper/experiments/matrix_completion_20261011/n3_slope_seamount/runs/v1/n3b/f025hz/grid_M090_N0800_IOUT-1/COUPLE.DAT",
+          "sha256": "14caa6ed0c9c422579d21dff708d66339f4f56bf895a5fcc3e69873a76f8dd23"
+        },
+        {
+          "path": "data/references/inputs/C8_f025_reference/check_fine/COUPLE.DAT",
+          "source_path": "paper/experiments/matrix_completion_20261011/n3_slope_seamount/runs/v1/n3b/f025hz/grid_M090_N0800_IOUT-1/COUPLE.DAT",
+          "sha256": "14caa6ed0c9c422579d21dff708d66339f4f56bf895a5fcc3e69873a76f8dd23"
+        }
+      ],
+      "notes": [
+        "Reference output z=1..400 m excludes pressure-release z=0. Primary full-field PE scores use z=1..300 m; the Table III C7/C8 reference checks use z=1..400 m.",
+        "Main full reference input has N+2 explicit environments; nodes j*4000/N with transition interfaces (j-0.5)*4000/N.",
+        "COUPLE native float32 range coordinates are snapped to the recorded 2 m (25 Hz) or 0.5 m (100 Hz) output lattice before exact point selection, as in the archived evaluation code."
+      ],
+      "source_records": [
+        {
+          "case": "C8",
+          "frequency_hz": "25",
+          "modes_from": "60",
+          "steps_from": "400",
+          "modes_to": "90",
+          "steps_to": "800",
+          "region": "field_0_400m",
+          "n_points": "263200",
+          "mae_db": "0.013146868223788383",
+          "rmse_db": "0.03591635957132286",
+          "p95_abs_db": "0.050914027523748254",
+          "max_abs_db": "8.909864488624166",
+          "bias_db": "-0.0006652968189253745",
+          "complex_relative_l2": "0.0013091421484929288",
+          "complex_relative_l2_db": "-57.66026389168359",
+          "threshold_db": "0.1",
+          "status": "PASS",
+          "independent_rmse_db": "0.035916359571322845",
+          "coarse_path": "paper/experiments/reference_fullfield_c6_c8_20261106/runs/C8_025Hz",
+          "fine_path": "paper/experiments/matrix_completion_20261011/n3_slope_seamount/runs/v1/n3b/f025hz/grid_M090_N0800_IOUT-1"
+        }
+      ],
+      "kind": "archived_pair",
+      "aggregation": "full_field_rms"
+    },
+    {
+      "id": "C8_f100_reference",
+      "case": "C8",
+      "frequency_hz": 100,
+      "reference": "COUPLE07 single-scattering coupled modes",
+      "expected_display": "0.08",
+      "scoring_configuration": {
+        "M": 300,
+        "N": 3200,
+        "HB_m": 1500,
+        "IOUT": -1,
+        "IGEOM": 0,
+        "IREFL": 0,
+        "source_depth_m": 100,
+        "water": {
+          "c_mps": 1500,
+          "rho_g_cm3": 1,
+          "attenuation_dB_per_wavelength": 0
+        },
+        "bottom": {
+          "c_mps": 1700,
+          "rho_g_cm3": 1.5,
+          "attenuation_dB_per_wavelength": 0.5
+        },
+        "absorber": "COUPLE test2 inherited profile: 0.5 dB/wavelength at seabed and 1000 m, 2.5 at HB=1500 m; geometry translation follows native input",
+        "output_depth_m": "1:1:400",
+        "output_range_step_m": 0.5,
+        "actual_input_header": [
+          "T7 n3b 100Hz M=300 N=3200 grid IOUT=-1",
+          "1500 100 100",
+          "300 0 0",
+          "400 1 1",
+          "0.0005000 4.0000000 0.0005000",
+          "3202 3200 -1",
+          "0.000000000 0 199.806954586 2 3",
+          "0 1500 0 1",
+          "199.806954586 1500 0 1",
+          "199.806954586 1700 .5 1.5",
+          "1000 1700 .5 1.5",
+          "1500 1700 2.5 1.5",
+          "0.000625000 0 199.805440987 -2 -3"
+        ],
+        "actual_input_environment_count": 3202,
+        "bathymetry": "H(r)=200-100 exp(-((r-2000)/800)^2)"
+      },
+      "check_pair": "M300/N12800 -> M300/N25600",
+      "evaluation": "r=56:6:3998 m, z=1:1:400 m; 263200 full-field points",
+      "datasets": [
+        {
+          "path": "data/references/checks/C8_f100_reference.npz",
+          "format": "paired_complex_npz",
+          "layout": "pressure[depth,range]",
+          "n_points": 263200,
+          "shape": [
+            400,
+            658
+          ],
+          "source_paths": [
+            "paper/experiments/reference_fullfield_c7_c8_refine2_20261110/runs/C8_100Hz_M300_N12800/COUPLE.CPR",
+            "paper/experiments/reference_fullfield_c8_refine3_20261110/runs/C8_100Hz_M300_N25600/COUPLE.CPR"
+          ],
+          "aggregation": "full_field_rms"
+        }
+      ],
+      "input_files": [
+        {
+          "path": "data/references/inputs/C8_f100_reference/check_coarse/COUPLE.DAT",
+          "source_path": "paper/experiments/reference_fullfield_c7_c8_refine2_20261110/runs/C8_100Hz_M300_N12800/COUPLE.DAT",
+          "sha256": "8be7db513beb1282138dc26e6f4c27e8e115f63479178d20ef2baf87764290d6"
+        },
+        {
+          "path": "data/references/inputs/C8_f100_reference/check_fine/COUPLE.DAT",
+          "source_path": "paper/experiments/reference_fullfield_c8_refine3_20261110/runs/C8_100Hz_M300_N25600/COUPLE.DAT",
+          "sha256": "0fd5696199f37cc0007d1d89b17d17c72929791ea6d19c7683e7aa92b43c0898"
+        },
+        {
+          "path": "data/references/inputs/C8_f100_reference/scoring/COUPLE.DAT",
+          "source_path": "paper/experiments/matrix_completion_20261011/n3_slope_seamount/runs/t7b001/grid/COUPLE.DAT",
+          "sha256": "a5c6cef5c6ab40086a617d459a3c252cfa4829624efccbb6939ffc2699b04853"
+        }
+      ],
+      "notes": [
+        "Reference output z=1..400 m excludes pressure-release z=0. Primary full-field PE scores use z=1..300 m; the Table III C7/C8 reference checks use z=1..400 m.",
+        "Scoring reference is coarser than both terminal reference-check levels. The displayed D_SPL does not establish this earlier scoring field has the same error as the terminal check.",
+        "Main full reference input has N+2 explicit environments; nodes j*4000/N with transition interfaces (j-0.5)*4000/N.",
+        "COUPLE native float32 range coordinates are snapped to the recorded 2 m (25 Hz) or 0.5 m (100 Hz) output lattice before exact point selection, as in the archived evaluation code."
+      ],
+      "source_records": [
+        {
+          "case": "C8",
+          "frequency_hz": "100",
+          "M": "300",
+          "comparison": "latest",
+          "N_from": "12800",
+          "N_to": "25600",
+          "region": "field_0_400m",
+          "n_points": "263200",
+          "mae_db": "0.008474734227642132",
+          "rmse_db": "0.08125149089188208",
+          "p95_abs_db": "0.020271989915894045",
+          "max_abs_db": "14.91111928225942",
+          "bias_db": "6.949805831609025e-06",
+          "complex_relative_l2": "6.889259666938625e-05",
+          "complex_relative_l2_db": "-83.2365489140635",
+          "independent_spl_rms_db": "0.08125149089188208",
+          "status": "PASS",
+          "complex_denominator": "norm(fine field)",
+          "amplitude_floor_hits": "0"
+        }
+      ],
+      "kind": "archived_pair",
+      "aggregation": "full_field_rms"
+    },
+    {
+      "id": "C9_f025_reference",
+      "case": "C9",
+      "frequency_hz": 25,
+      "reference": "Frozen published SI data",
+      "expected_display": "Unverified",
+      "scoring_configuration": {
+        "source_file": "case08_3d_wedge/reference/published_mpe_supplement/cross_wedge_ASA.TL",
+        "sha256": "ee2d63b75632aa0121a0c39f4708227ab62af1c397fb414513650e1447b68654",
+        "published_native_rows": 500,
+        "column_used": "Third column complex pressure, not second rounded log column",
+        "source_depth_m": 100,
+        "receiver_depth_m": 30,
+        "receiver_y_m": 0,
+        "water_c_mps": 1500,
+        "bottom_c_mps": 1700,
+        "bottom_rho_g_cm3": 1.5,
+        "bottom_attenuation_dB_per_wavelength": 0.5,
+        "repository_commit": "0c48133712c4de74683fcc6960ebb1b02575726a",
+        "scoring_n": 479,
+        "scoring_xmin_m": 1002.0,
+        "scoring_xmax_m": 24950.0,
+        "native_x_grid_note": "Use actual rounded coordinates in source data; not a synthesized uniform float grid."
+      },
+      "check_pair": "No verified second SI discretization level",
+      "evaluation": "479 exact common SI coordinates, x=1.002..24.950 km, y=0, z=30 m",
+      "datasets": [],
+      "input_files": [
+        {
+          "path": "data/references/published_si/cross_wedge_ASA.TL",
+          "source_path": "case08_3d_wedge/reference/published_mpe_supplement/cross_wedge_ASA.TL",
+          "sha256": "ee2d63b75632aa0121a0c39f4708227ab62af1c397fb414513650e1447b68654"
+        }
+      ],
+      "notes": [
+        "The local frozen reference file and score are reproducible; SI generator grid/truncation settings and convergence for this file remain unverified. Do not invent SI modal/integration cutoff settings."
+      ],
+      "source_records": [],
+      "kind": "unverified",
+      "aggregation": "not_applicable",
+      "provenance_file": "data/references/published_si/PROVENANCE.md"
+    },
+    {
+      "id": "N1_f030_reference",
+      "case": "N1",
+      "frequency_hz": 30,
+      "reference": "Finite angle-selected analytical modal sum",
+      "expected_display": "Analytical",
+      "scoring_configuration": {
+        "theta_cut_deg": [
+          20,
+          30,
+          40,
+          50,
+          60,
+          70
+        ],
+        "retained_mode_counts": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "selection": "Keep propagating modes whose arcsin(gamma_m/k0) <= theta_cut",
+        "H_m": 200,
+        "source_depth_m": 100,
+        "receiver_depth_m": 100,
+        "same_selected_modes_for_starter_and_reference": true
+      },
+      "check_pair": "No truncation ladder: target is the prescribed finite modal sum",
+      "evaluation": "Each cutoff uses the same paper-rule scoring points as C2 at this frequency",
+      "datasets": [],
+      "input_files": [],
+      "notes": [
+        "Table III intervals summarize six angle cutoffs. They are not confidence intervals or convergence errors."
+      ],
+      "source_records": [],
+      "kind": "analytical",
+      "aggregation": "not_applicable"
+    },
+    {
+      "id": "N1_f090_reference",
+      "case": "N1",
+      "frequency_hz": 90,
+      "reference": "Finite angle-selected analytical modal sum",
+      "expected_display": "Analytical",
+      "scoring_configuration": {
+        "theta_cut_deg": [
+          20,
+          30,
+          40,
+          50,
+          60,
+          70
+        ],
+        "retained_mode_counts": [
+          8,
+          12,
+          15,
+          18,
+          21,
+          23
+        ],
+        "selection": "Keep propagating modes whose arcsin(gamma_m/k0) <= theta_cut",
+        "H_m": 200,
+        "source_depth_m": 100,
+        "receiver_depth_m": 100,
+        "same_selected_modes_for_starter_and_reference": true
+      },
+      "check_pair": "No truncation ladder: target is the prescribed finite modal sum",
+      "evaluation": "Each cutoff uses the same paper-rule scoring points as C2 at this frequency",
+      "datasets": [],
+      "input_files": [],
+      "notes": [
+        "Table III intervals summarize six angle cutoffs. They are not confidence intervals or convergence errors."
+      ],
+      "source_records": [],
+      "kind": "analytical",
+      "aggregation": "not_applicable"
+    },
+    {
+      "id": "N1_f200_reference",
+      "case": "N1",
+      "frequency_hz": 200,
+      "reference": "Finite angle-selected analytical modal sum",
+      "expected_display": "Analytical",
+      "scoring_configuration": {
+        "theta_cut_deg": [
+          20,
+          30,
+          40,
+          50,
+          60,
+          70
+        ],
+        "retained_mode_counts": [
+          18,
+          27,
+          34,
+          41,
+          46,
+          50
+        ],
+        "selection": "Keep propagating modes whose arcsin(gamma_m/k0) <= theta_cut",
+        "H_m": 200,
+        "source_depth_m": 100,
+        "receiver_depth_m": 100,
+        "same_selected_modes_for_starter_and_reference": true
+      },
+      "check_pair": "No truncation ladder: target is the prescribed finite modal sum",
+      "evaluation": "Each cutoff uses the same paper-rule scoring points as C2 at this frequency",
+      "datasets": [],
+      "input_files": [],
+      "notes": [
+        "Table III intervals summarize six angle cutoffs. They are not confidence intervals or convergence errors."
+      ],
+      "source_records": [],
+      "kind": "analytical",
+      "aggregation": "not_applicable"
+    }
+  ]
+}

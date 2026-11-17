@@ -1,0 +1,118 @@
+{
+  "upstream": {
+    "commit": "a5c107ca5083f6183cd88f9fcdf7489106dd4622",
+    "matched_git_blobs": 50,
+    "paths": [
+      ".gitignore",
+      ".gitmodules",
+      "LICENSE",
+      "README.md",
+      "build/cmake/CMakeLists.txt",
+      "build/main.cpp",
+      "docs/docs.pdf",
+      "docs/docs.tex",
+      "include/boundary_conditions.hpp",
+      "include/coefficients.hpp",
+      "include/config.hpp",
+      "include/initial_conditions.hpp",
+      "include/io/convertors.hpp",
+      "include/io/reader.hpp",
+      "include/io/writer.hpp",
+      "include/modes.hpp",
+      "include/rays.hpp",
+      "include/solver.hpp",
+      "include/threads/buffer_manager.hpp",
+      "include/threads/pool.hpp",
+      "include/threads/task.hpp",
+      "include/utils/assert.hpp",
+      "include/utils/callback.hpp",
+      "include/utils/comparators.hpp",
+      "include/utils/concepts.hpp",
+      "include/utils/differentiaion.hpp",
+      "include/utils/dimensions.hpp",
+      "include/utils/event.hpp",
+      "include/utils/fft.hpp",
+      "include/utils/interpolation.hpp",
+      "include/utils/join.hpp",
+      "include/utils/multi_optional.hpp",
+      "include/utils/object_descriptor.hpp",
+      "include/utils/progress_bar.hpp",
+      "include/utils/to_string_helper.hpp",
+      "include/utils/types.hpp",
+      "include/utils/utils.hpp",
+      "include/utils/verbosity.hpp",
+      "samples/canyon/bathymetry.txt",
+      "samples/canyon/config.json",
+      "samples/pekeris/config.json",
+      "samples/pekeris_impulse/config.json",
+      "samples/pekeris_impulse/source.txt",
+      "samples/wedge/config.json",
+      "samples/wedge_impulse/config.json",
+      "samples/wedge_impulse/source.txt",
+      "samples/workshop_b1/README.md",
+      "samples/workshop_b1/config_across.json",
+      "samples/workshop_b1/config_along.json",
+      "samples/workshop_b1/source.txt"
+    ]
+  },
+  "dependencies": [
+    {
+      "target": "modules/CAMBALA",
+      "repository": "Nauchnik/CAMBALA",
+      "commit": "a4c11358c549a56aa23ea6a64b09dd182be264c4",
+      "url": "https://codeload.github.com/Nauchnik/CAMBALA/tar.gz/a4c11358c549a56aa23ea6a64b09dd182be264c4",
+      "archive_sha256": "95061f24d848c3f9ce14f78822f18c2644d1c5eb62e57ef4864bcf8ac344ea50",
+      "files": 415
+    },
+    {
+      "target": "modules/DORK",
+      "repository": "GoldFeniks/DORK",
+      "commit": "d652edf099c07b24fd03286a51dc2c8a1fa0820f",
+      "url": "https://codeload.github.com/GoldFeniks/DORK/tar.gz/d652edf099c07b24fd03286a51dc2c8a1fa0820f",
+      "archive_sha256": "a6299a32b7f3b2d1c5774dca2598b554cffdd0617af94352cf8a918d9170b5db",
+      "files": 14
+    },
+    {
+      "target": "modules/delaunay",
+      "repository": "GoldFeniks/delaunay",
+      "commit": "a96621d28a57bd6c73fbecf0ae5347714a3ed07e",
+      "url": "https://codeload.github.com/GoldFeniks/delaunay/tar.gz/a96621d28a57bd6c73fbecf0ae5347714a3ed07e",
+      "archive_sha256": "f29b2bfa10ff0ec166cd8d597c418fcee17d2ca1df53bd7ac429557063148c2f",
+      "files": 6
+    },
+    {
+      "target": "modules/json",
+      "repository": "nlohmann/json",
+      "commit": "ea528bbfda83790830e1a0892d1b2c7ce78c2961",
+      "url": "https://codeload.github.com/nlohmann/json/tar.gz/ea528bbfda83790830e1a0892d1b2c7ce78c2961",
+      "archive_sha256": "99f6262dbe1ff0edd43b7947b57cd978ea7969ba25ccc8e3c58a7f4d188cf16e",
+      "files": 950
+    },
+    {
+      "target": "modules/zip",
+      "repository": "GoldFeniks/zip",
+      "commit": "09bc185047c5eca68134c02c0effde6b7cb3330b",
+      "url": "https://codeload.github.com/GoldFeniks/zip/tar.gz/09bc185047c5eca68134c02c0effde6b7cb3330b",
+      "archive_sha256": "7b0b24c6561ccfbfb8230e1c2beeafddb79c500359161ac003036667f73bfe15",
+      "files": 7
+    },
+    {
+      "target": "modules/CAMBALA/third_party/spectra",
+      "repository": "yixuan/spectra",
+      "commit": "5f8ea3a585504ce0eac341d33a48ce3b2f899306",
+      "url": "https://codeload.github.com/yixuan/spectra/tar.gz/5f8ea3a585504ce0eac341d33a48ce3b2f899306",
+      "archive_sha256": "433c8950e80a4fb49dc6d0daa4532860c213b4e5ce834998b1f80bfe59e6e8af",
+      "files": 103
+    },
+    {
+      "target": "modules/CAMBALA/third_party/eigen",
+      "repository": "eigen-mirror/eigen",
+      "commit": "6e3b795f811e8f3bf75393f8274e558a40479cc9",
+      "url": "https://codeload.github.com/eigen-mirror/eigen/tar.gz/6e3b795f811e8f3bf75393f8274e558a40479cc9",
+      "archive_sha256": "31aee14c2b63a0c4f445f721a50c974e71ef7a164032a3fdf215007ac42ea43e",
+      "files": 1777
+    }
+  ],
+  "alglib": "仅复用本地展开源码与上游校验标记，不声称重算已删除的下载包哈希",
+  "packaged_patch": "source_changes.patch includes only release_density hunks from the archived multi-build patch."
+}

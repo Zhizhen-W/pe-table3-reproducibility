@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-17",
+  "repository": "https://github.com/Zhizhen-W/pe-table3-reproducibility",
+  "source_manuscript_sha256": "03d46fd531b856eafff22ab74eea46e1c3206240872f2add0c381537de404ed8",
+  "configurations": 129,
+  "baseline_configurations": 75,
+  "n1_configurations": 54,
+  "pe_scalar_scores": 164,
+  "table3_method_cells": 170,
+  "reference_check_rows": 23,
+  "numerical_scores_recomputed_during_packaging": false,
+  "solvers_executed_during_packaging": false,
+  "validation_performed": [
+    "manifest cross-links",
+    "required file existence",
+    "Python AST syntax",
+    "content identity for deduplication and release checksums"
+  ],
+  "scope": "Archived physical-pressure recalculation plus native inputs and solver provenance; C3 reference pairs regenerate when readers execute the scoring entry point."
+}

@@ -1,0 +1,11 @@
+paper_case,environment,legacy_source,frequencies_hz
+C1,Free field,case00_point_source_uniform_water,30;90;200
+C2,Rigid bottom,case01_point_source_rigid_bottom_waveguide,30;90;200
+C3,Pekeris waveguide,case02_point_source_pekeris_waveguide,30;90;200
+C4,Layered seabed,paper/experiments/matrix_completion_20261011/c3v2,30;90;200
+C5,Munk channel,paper/experiments/matrix_completion_20261011/n2_munk,50
+C6,Upslope,case07_asa_wedge_range_dependent; legacy WAMPE alias c7,25;100
+C7,Downslope,paper/experiments/matrix_completion_20261011/n3_slope_seamount; alias n3a,25;100
+C8,Gaussian seamount,paper/experiments/matrix_completion_20261011/n3_slope_seamount; alias n3b,25;100
+C9,3D wedge,case08_3d_wedge; paper/experiments/matrix_completion_20261011/c8_diagnostics,25
+N1,C2 angular truncation,case01_point_source_rigid_bottom_waveguide; paper/experiments/smpe_completion_20261011,30;90;200

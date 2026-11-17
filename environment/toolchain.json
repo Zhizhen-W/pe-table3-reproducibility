@@ -1,0 +1,17 @@
+{
+  "archive_baseline": {
+    "os": "Ubuntu 22.04 / WSL Linux",
+    "python": "3.10.12",
+    "gfortran": "11.4.0"
+  },
+  "packaging_python_dependencies": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3"
+  },
+  "note": "Archive versions are provenance, not a fresh solver validation. No solvers or numerical score checks were executed during packaging.",
+  "native_solver_requirements": {
+    "RAM_FOR3D_UMPE_COUPLE_SCOOTER": "matching Fortran source/build variant; see configuration provenance",
+    "SMPE": "Octave with the archived external-starter driver and compatibility shims",
+    "AMPLE": "C++20, CMake, Boost program_options, FFTW3 and pinned modal dependencies"
+  }
+}

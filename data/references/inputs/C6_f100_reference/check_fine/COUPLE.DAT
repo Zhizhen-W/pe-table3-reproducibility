@@ -1,0 +1,13 @@
+case07 ASA wedge 100 Hz M=300 N=3200 IOUT=-1
+1500.0  100.0000  100.0                 !HB,FREQ,ZS
+300  0  0                         !M,IGEOM,IREFL
+400  1.000000  1.000000               !NDEP,ZMIN,ZINC
+0.0005000  4.0000000  0.0005000    !RMIN,RMAX,RINC
+2  3200  -1                      !N,IPRT,IOUT
+0.00  3200  200.0  2  3                  !RANGE,IRLIN,DPTH,NPW,NPB
+0.0     1500.0  0.0  1.00               !DEPW,SVPW,DBPWLW,RHOW
+200.0   1500.0  0.0  1.00
+200.0   1700.0  0.50  1.50   !DEPB,SVPB,DBPWLB,RHOB
+1000.0  1700.0  0.50  1.50
+1500.0  1700.0  2.50  1.50
+4.000000000  0  0.010000000  -2  -3                 !RANGE,IRLIN,DPTH,NPW,NPB

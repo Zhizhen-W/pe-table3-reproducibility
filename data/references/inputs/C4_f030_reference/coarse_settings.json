@@ -1,0 +1,45 @@
+{
+  "method": "stable_dgm_wavenumber_integration_trapezoid_shifted_contour",
+  "time_convention": "e^{-iwt}",
+  "source_normalisation": "free-field exp(ikR)/(4 pi R)",
+  "frequency_hz": 30.0,
+  "layer_tops_m": [
+    0.0,
+    200.0,
+    220.0,
+    260.0,
+    320.0
+  ],
+  "c_mps": [
+    1500.0,
+    1560.0,
+    1650.0,
+    1800.0,
+    2400.0
+  ],
+  "rho_kg_m3": [
+    1024.0,
+    1500.0,
+    1700.0,
+    1900.0,
+    2200.0
+  ],
+  "attenuation_db_per_wavelength": [
+    0.0,
+    0.2,
+    0.3,
+    0.5,
+    0.1
+  ],
+  "attenuation_conversion": "AT CRCI W conjugated: c*(1-i*a/(8.6858896*2*pi))",
+  "source_depth_m": 100.0,
+  "settings": {
+    "range_window_m": 200000,
+    "contour_decay": 15,
+    "k_extra_rad_per_m": 0.4
+  },
+  "nk": 16733,
+  "dk_rad_per_m": 3.141592653589793e-05,
+  "kmax_rad_per_m": 0.5256512827986441,
+  "contour_offset_gamma": 7.5e-05
+}

@@ -1,0 +1,22 @@
+--- frozen/build/cmake/CMakeLists.txt
++++ release_density/build/cmake/CMakeLists.txt
+@@ -7,7 +7,7 @@
+ if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /O2")
+ else()
+-    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Ofast")
++    set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3")
+ endif()
+ 
+ set(THREADS_PREFER_PTHREAD_FLAG ON)
+--- frozen/include/modes.hpp
++++ release_density/include/modes.hpp
+@@ -92,7 +92,7 @@
+             _n_m.M_c2s.resize(_config.n_layers());
+             _n_m.M_c2s.insert(_n_m.M_c2s.end(), _config.bottom_c2s().begin(), _config.bottom_c2s().end());
+ 
+-            _n_m.M_rhos.resize(config.n_layers(), T(1));
++            _n_m.M_rhos.resize(config.n_layers(), config.data().value("water_rho", T(1)));
+             _n_m.M_rhos.insert(_n_m.M_rhos.end(), _config.bottom_rhos().begin(), _config.bottom_rhos().end());
+ 
+             _n_m.M_Ns_points.resize(_n_m.M_depths.size());

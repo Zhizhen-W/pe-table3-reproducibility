@@ -1,0 +1,7 @@
+# Preserve archived bytes and checksum identities on every platform.
+* -text
+*.npz binary
+*.npy binary
+*.bin binary
+*.gz binary
+*.zip binary
