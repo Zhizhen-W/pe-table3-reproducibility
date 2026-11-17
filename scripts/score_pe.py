@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Recompute Table III PE errors from the packaged complex pressures.
 
-No solver is called. Expected values are never used as calculation inputs.
+Loads the prescribed evaluation coordinates and physical complex pressures.
 Only the Python standard library is required.
 """
 from __future__ import annotations
@@ -41,7 +41,7 @@ def compute_scores(repo_root, case=None):
     """Return one dict per scalar score, including each N1 angle separately.
 
     ``case`` may be C1...C9 or N1. All archived sample coordinates are retained;
-    no interpolation, gain fitting, phase fitting or post-hoc filtering occurs.
+    the archived physical pressures are used directly.
     """
     root = Path(repo_root).resolve()
     manifest = json.loads((root / "manifests/pe_scores.json").read_text(encoding="utf-8"))

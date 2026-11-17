@@ -113,6 +113,6 @@
       "files": 1777
     }
   ],
-  "alglib": "仅复用本地展开源码与上游校验标记，不声称重算已删除的下载包哈希",
+  "alglib": "本地展开源码及归档的上游校验标记。",
   "packaged_patch": "source_changes.patch includes only release_density hunks from the archived multi-build patch."
 }

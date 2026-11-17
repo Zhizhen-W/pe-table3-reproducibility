@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check paths, manifest links and Python syntax; never execute numerical code."""
+"""Check paths, manifest links, file checksums and Python syntax."""
 from __future__ import annotations
 import argparse
 import ast

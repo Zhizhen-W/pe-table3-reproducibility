@@ -8,7 +8,7 @@
     "numpy": "2.2.6",
     "scipy": "1.15.3"
   },
-  "note": "Archive versions are provenance, not a fresh solver validation. No solvers or numerical score checks were executed during packaging.",
+  "note": "Archive toolchain versions and Python dependencies for the reproduction scripts.",
   "native_solver_requirements": {
     "RAM_FOR3D_UMPE_COUPLE_SCOOTER": "matching Fortran source/build variant; see configuration provenance",
     "SMPE": "Octave with the archived external-starter driver and compatibility shims",

@@ -28,7 +28,7 @@ def stage(config_id, output):
             raise ValueError(f"Duplicate staged target: {target}")
         shutil.copyfile(source, target)
     (dest / "configuration.json").write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Inputs staged to {dest}. No solver was run.")
+    print(f"Inputs staged to {dest}.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)

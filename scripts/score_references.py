@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Recompute Table III reference differences from paired fields or the C3 DGM inputs.
 
-The publisher did not execute this numerical command while assembling the repository.
+Loads archived paired fields and generates the C3 DGM fields from their settings.
 """
 from __future__ import annotations
 
@@ -54,7 +54,7 @@ def _read_pair(root, row):
 
 
 def compute_reference_checks(root=None, case=None):
-    """Return result rows without reading expected values or comparing numerical results."""
+    """Return reference differences calculated on the prescribed evaluation points."""
     root = Path(root) if root is not None else Path(__file__).resolve().parents[1]
     manifest = json.loads((root / "manifests/reference_checks.json").read_text(encoding="utf-8"))
     results = []

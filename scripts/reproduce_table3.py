@@ -51,7 +51,7 @@ def main():
     lines = ["| " + " | ".join(header) + " |", "| " + " | ".join("---" for _ in header) + " |"]
     lines.extend("| " + " | ".join(str(row[name]) for name in header) + " |" for row in rows)
     (dest / "table3.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"Wrote {len(rows)} table rows to {dest}; no expected values were used to calculate scores.")
+    print(f"Wrote {len(rows)} table rows to {dest}.")
 
 if __name__ == "__main__":
     main()
